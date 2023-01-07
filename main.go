@@ -22,7 +22,7 @@ func main() {
 	var input string
 	fmt.Scanln(&input)
 
-	//Encode the ascii characters
+	//Encode the input
 	var numbers []int = encode(input)
 
 	//-----------------------
@@ -30,6 +30,9 @@ func main() {
 	bytes, _ := ioutil.ReadFile("banner/standard.txt")
 
 	lines := strings.Split(string(bytes), "\n")
+	x := numbers
+	beginning := (x-1)*9 + 2
+	ending := (x-1)*9 + 2 + 7
 	for i, line := range lines {
 		if i == 13 { //need to make a algorithm
 			fmt.Println(line)
