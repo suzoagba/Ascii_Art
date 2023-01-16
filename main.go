@@ -27,7 +27,7 @@ func main() {
 	}
 
 	//Split .txt File
-	letters := strings.Split(string(bytes), "\n") // \n is the separator
+	letters := strings.Split(string(bytes), "\n")
 
 	for _, line := range parts { //this is used to handle newlines
 		for i := 1; i < 9; i++ {
