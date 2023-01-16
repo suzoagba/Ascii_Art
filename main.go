@@ -29,10 +29,11 @@ func main() {
 	//Split .txt File
 	letters := strings.Split(string(bytes), "\n") // \n is the separator
 
-	for _, line := range parts {
+	for _, line := range parts { //this is used to handle newlines
 		for i := 1; i < 9; i++ {
 			for _, char := range line {
 				os.Stdout.WriteString(letters[(char-32)*9+rune(i)])
+				// fmt.Println(letters[(char-32)*9+rune(i)])
 			}
 			if line == "" {
 				fmt.Println()
