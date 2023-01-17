@@ -3,6 +3,7 @@
 ## Description
 
 ## How To Run
+go run . "Hello World" | cat -e
 
 ## Implementation
 
@@ -15,6 +16,6 @@
 //Somehow merge them
 
 ## Authors
-Robin Rattasepp & 
+Robin Rattasepp, Anton Urban, Samuel Uzoagba & Alex Embacher 
 
 
