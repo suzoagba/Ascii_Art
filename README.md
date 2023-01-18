@@ -9,15 +9,6 @@ Use the command `go run main.go "your text"` or `go run main.go "your text" font
 
 Make sure your End Of Line Sequence is set to LF.
 
-### Implementation
-// Get user input
-// Split into substrings
-
-//Read .txt file
-//Split into substrings
-
-//Somehow merge them
-
 #### Used Tehcnologies
 * Golang 1.17
 
