@@ -21,6 +21,7 @@ Make sure your End Of Line Sequence is set to LF.
 #### Used Tehcnologies
 * Golang 1.17
 
+
 ### Authors
 Robin Rattasepp, Anton Urban, Samuel Uzoagba & Alex Embacher 
 
