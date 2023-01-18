@@ -57,10 +57,7 @@ func main() {
 				for _, char := range line {
 					os.Stdout.WriteString(letters[(char-32)*9+rune(i)])
 				}
-				if line == "" {
-					fmt.Println()
-					break
-				}
+
 				os.Stdout.WriteString("\n")
 			}
 		}
