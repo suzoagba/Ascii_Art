@@ -10,7 +10,7 @@ import (
 func main() {
 	args := os.Args
 
-	const usage = "Usage: 'go run main.go [TEXT]' or 'go run main.go [TEXT] [FONT]' "
+	const usage = "Usage: go run main.go 'your text' or go run main.go 'your text' font "
 	if len(args) < 2 || len(args) > 3 {
 		fmt.Println(usage)
 		return

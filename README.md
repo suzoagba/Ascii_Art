@@ -5,7 +5,7 @@ Ascii-art is a program which consists in receiving a string as an argument and o
 You can choose from three different fonts: standard, shadow or thinkertoy.
 
 ### How To Run
-Use the command `go run main.go "your text"` or `go run main.go "your text" font` to get started.
+Use the command `go run main.go 'your text'` or `go run main.go 'your text' font` to get started.
 
 Make sure your End Of Line Sequence is set to LF.
 
