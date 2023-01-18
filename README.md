@@ -18,6 +18,9 @@ Make sure your End Of Line Sequence is set to LF.
 
 //Somehow merge them
 
+#### Used Tehcnologies
+* Golang 1.17
+
 ### Authors
 Robin Rattasepp, Anton Urban, Samuel Uzoagba & Alex Embacher 
 
