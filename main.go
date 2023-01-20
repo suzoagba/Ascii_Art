@@ -2,63 +2,45 @@ package main
 
 import (
 	"fmt"
-	"io/ioutil"
 	"os"
 	"strings"
 )
 
 func main() {
-	args := os.Args
-
-	const usage = "Usage: go run main.go 'your text' or go run main.go 'your text' font "
-	if len(args) < 2 || len(args) > 3 {
-		fmt.Println(usage)
+	if len(os.Args) != 3 { // require 2 arguments
+		if os.Args[1] == "" {
+			return
+		}
+		fmt.Println("Invalid Input. Usage: go run main.go \"<text>\" <font>")
 		return
 	}
 
-	text := args[1]
-	font := "fonts/standard.txt"
+	text := os.Args[1] // Get Text from Input
+	font := os.Args[2] // Get Font File from Input
 
-	if len(args) == 3 {
-		switch args[2] {
-		case "standard", "standard.txt":
-			font = "fonts/standard.txt"
-		case "shadow", "shadow.txt":
-			font = "fonts/shadow.txt"
-		case "thinkertoy", "thinkertoy.txt":
-			font = "fonts/thinkertoy.txt"
-		default:
-			fmt.Println("Invalid font type")
-			return
-		}
-	}
-
-	if text == "\\n" {
+	if text == "\\n" { // convert "\n" to newline
 		fmt.Printf("\n")
 	} else if text != "" {
-		//Read .txt File
-		fontBytes, err := ioutil.ReadFile(font)
+		fontBytes, err := os.ReadFile(font) // Read Font File
 		if err != nil {
-			fmt.Println("No such file")
+			fmt.Print("Error reading font file: ")
 			return
 		}
 
-		// Split .txt File
-		letters := strings.Split(string(fontBytes), "\n")
-
-		//Handle \n
-		text = strings.ReplaceAll(text, "\\n", "\n")
-
-		//Split Input
-		parts := strings.Split(text, "\n")
+		lines := strings.Split(string(fontBytes), "\n") // Split Font File
+		text = strings.ReplaceAll(text, "\\n", "\n")    // Handle "\n" input
+		parts := strings.Split(text, "\n")              // Split Input
 
 		for _, line := range parts {
 			for i := 1; i < 9; i++ {
-				for _, char := range line {
-					os.Stdout.WriteString(letters[(char-32)*9+rune(i)])
+				for _, ascii := range line {
+					fmt.Printf(lines[(ascii-32)*9+rune(i)])
 				}
-
-				os.Stdout.WriteString("\n")
+				if line == "" { // handle empty line ("\n")
+					fmt.Println()
+					break
+				}
+				fmt.Println()
 			}
 		}
 	}
